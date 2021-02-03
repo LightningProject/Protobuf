@@ -55,5 +55,13 @@ public class Protobuf : ModuleRules
 		bEnableUndefinedIdentifierWarnings = false;
 		bEnableExceptions = true;
 		PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS");   //Definitions.Add("_CRT_SECURE_NO_WARNINGS");	// deprecated
+		// Disable RTTI
+		PublicDefinitions.AddRange(
+			new string[]
+			{
+				"_CRT_SECURE_NO_WARNINGS",
+				"GOOGLE_PROTOBUF_NO_RTTI=1",
+			}
+			);
 	}
 }
