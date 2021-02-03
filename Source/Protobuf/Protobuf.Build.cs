@@ -54,7 +54,6 @@ public class Protobuf : ModuleRules
 		ShadowVariableWarningLevel = WarningLevel.Off;  //bEnableShadowVariableWarnings = false;	//4.24 deprecated
 		bEnableUndefinedIdentifierWarnings = false;
 		bEnableExceptions = true;
-		PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS");   //Definitions.Add("_CRT_SECURE_NO_WARNINGS");	// deprecated
 		// Disable RTTI
 		PublicDefinitions.AddRange(
 			new string[]

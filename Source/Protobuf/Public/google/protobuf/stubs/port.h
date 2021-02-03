@@ -81,7 +81,7 @@
 
 // Legacy: some users reference these (internal-only) macros even though we
 // don't need them any more.
-#if defined(_MSC_VER) && defined(PROTOBUF_USE_DLLS)
+#if defined(_MSC_VER) && defined(PROTOBUF_API)
   #ifdef LIBPROTOBUF_EXPORTS
     #define LIBPROTOBUF_EXPORT __declspec(dllexport)
   #else
@@ -95,6 +95,9 @@
 #else
   #define LIBPROTOBUF_EXPORT
   #define LIBPROTOC_EXPORT
+
+  #undef PROTOBUF_API
+  #define PROTOBUF_API
 #endif
 
 #define PROTOBUF_RUNTIME_DEPRECATED(message) PROTOBUF_DEPRECATED_MSG(message)
