@@ -604,3 +604,19 @@
 #if !defined(PROTOBUF_ATTRIBUTE_NO_DESTROY)
 #define PROTOBUF_ATTRIBUTE_NO_DESTROY
 #endif
+
+// disable warning(E193, W1059) -> (E0, W0)
+#ifdef _MSC_VER
+#pragma warning(disable: 4996)  // W26:_CRT_SECURE_NO_WARNINGS 
+#pragma warning(disable: 4582)  // E43:constructor is not implicitly called
+#pragma warning(disable: 4018)  // E15:signed/unsigned mismatch
+#pragma warning(disable: 4800)  // E43:impilicit type convert to bool
+#pragma warning(disable: 4946)  // W1029:reinterpret_cast used between related classes
+#pragma warning(disable: 4125)  // E80:decimal digit terminates octal escape sequence
+#pragma warning(disable: 4506)  // E6:no definition for inline function
+#pragma warning(disable: 4065)  // E1:switch statement contains 'default' but no 'case' labels
+#pragma warning(disable: 4146)  // E1:unary minus operator applied to unsigned type, result still unsigned
+#pragma warning(disable: 4457)  // W1:declaration of 'field' hides function parameter
+#pragma warning(disable: 4310)  // E4:cast truncates constant value
+#pragma warning(disable: 4005)  // W2:macro redefinition(TEXT) + W1:time_util.cc
+#endif
