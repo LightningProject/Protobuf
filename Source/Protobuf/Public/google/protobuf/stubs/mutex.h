@@ -33,9 +33,9 @@
 #include <mutex>
 
 #ifdef GOOGLE_PROTOBUF_SUPPORT_WINDOWS_XP
-
+#pragma push_macro("TEXT")
 #include <windows.h>
-
+#pragma pop_macro("TEXT")
 // GetMessage conflicts with GeneratedMessageReflection::GetMessage().
 #ifdef GetMessage
 #undef GetMessage
