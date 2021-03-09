@@ -453,7 +453,7 @@ class PROTOBUF_EXPORT ArenaImpl {
   // local storage class we implemented.
   // iOS also does not support the __thread keyword.
   static ThreadCache& thread_cache();
-#elif defined(PROTOBUF_USE_DLLS)
+#elif defined(PROTOBUF_USE_DLLS) || defined(PROTOBUF_API)
   // Thread local variables cannot be exposed through DLL interface but we can
   // wrap them in static functions.
   static ThreadCache& thread_cache();

@@ -412,6 +412,11 @@
 #define PROTOBUF_EXPORT_TEMPLATE_DEFINE
 #endif
 
+#ifdef PROTOBUF_API
+#undef PROTOBUF_EXPORT
+#define PROTOBUF_EXPORT PROTOBUF_API
+#endif
+
 // Windows declares several inconvenient macro names.  We #undef them and then
 // restore them in port_undef.inc.
 #ifdef _MSC_VER
@@ -619,4 +624,6 @@
 #pragma warning(disable: 4457)  // W1:declaration of 'field' hides function parameter
 #pragma warning(disable: 4310)  // E4:cast truncates constant value
 #pragma warning(disable: 4005)  // W2:macro redefinition(TEXT) + W1:time_util.cc
+// disable warning(E16)
+#pragma warning(disable: 4661)  // E16:no suitable definition provided for explicit template instantiation request(map_field.h)
 #endif

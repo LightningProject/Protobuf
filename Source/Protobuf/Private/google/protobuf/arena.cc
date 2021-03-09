@@ -61,7 +61,7 @@ ArenaImpl::ThreadCache& ArenaImpl::thread_cache() {
       new internal::ThreadLocalStorage<ThreadCache>();
   return *thread_cache_->Get();
 }
-#elif defined(PROTOBUF_USE_DLLS)
+#elif defined(PROTOBUF_USE_DLLS) || defined(PROTOBUF_API)
 ArenaImpl::ThreadCache& ArenaImpl::thread_cache() {
   static PROTOBUF_THREAD_LOCAL ThreadCache thread_cache_ = {
       0, static_cast<LifecycleIdAtomic>(-1), nullptr};
