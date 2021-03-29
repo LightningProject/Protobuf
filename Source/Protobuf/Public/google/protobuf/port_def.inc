@@ -610,20 +610,27 @@
 #define PROTOBUF_ATTRIBUTE_NO_DESTROY
 #endif
 
-// disable warning(E193, W1059) -> (E0, W0)
 #ifdef _MSC_VER
-#pragma warning(disable: 4996)  // W26:_CRT_SECURE_NO_WARNINGS 
-#pragma warning(disable: 4582)  // E43:constructor is not implicitly called
+#pragma warning(disable: 4005)  // W2:macro redefinition(TEXT) + W1:time_util.cc
 #pragma warning(disable: 4018)  // E15:signed/unsigned mismatch
+#pragma warning(disable: 4065)  // E1:switch statement contains 'default' but no 'case' labels
+#pragma warning(disable: 4125)  // E80:decimal digit terminates octal escape sequence
+#pragma warning(disable: 4146)  // E1:unary minus operator applied to unsigned type, result still unsigned
+#pragma warning(disable: 4310)  // E4:cast truncates constant value
+#pragma warning(disable: 4457)  // W1:declaration of 'field' hides function parameter
+#pragma warning(disable: 4506)  // E6:no definition for inline function
+#pragma warning(disable: 4582)  // E43:constructor is not implicitly called
+#pragma warning(disable: 4661)  // E16:no suitable definition provided for explicit template instantiation request(map_field.h)
 #pragma warning(disable: 4800)  // E43:impilicit type convert to bool
 #pragma warning(disable: 4946)  // W1029:reinterpret_cast used between related classes
-#pragma warning(disable: 4125)  // E80:decimal digit terminates octal escape sequence
-#pragma warning(disable: 4506)  // E6:no definition for inline function
-#pragma warning(disable: 4065)  // E1:switch statement contains 'default' but no 'case' labels
-#pragma warning(disable: 4146)  // E1:unary minus operator applied to unsigned type, result still unsigned
-#pragma warning(disable: 4457)  // W1:declaration of 'field' hides function parameter
-#pragma warning(disable: 4310)  // E4:cast truncates constant value
-#pragma warning(disable: 4005)  // W2:macro redefinition(TEXT) + W1:time_util.cc
-// disable warning(E16)
-#pragma warning(disable: 4661)  // E16:no suitable definition provided for explicit template instantiation request(map_field.h)
+#pragma warning(disable: 4996)  // W26:_CRT_SECURE_NO_WARNINGS 
+// disable more on CMakeLists.txt
+#pragma warning(disable: 4244) // 'conversion' conversion from 'type1' to 'type2', possible loss of data
+#pragma warning(disable: 4251) // 'identifier' : class 'type' needs to have dll-interface to be used by clients of class 'type2'
+#pragma warning(disable: 4267) // 'var' : conversion from 'size_t' to 'type', possible loss of data
+#pragma warning(disable: 4305) // 'identifier' : truncation from 'type1' to 'type2'
+#pragma warning(disable: 4307) // 'operator' : integral constant overflow
+#pragma warning(disable: 4309) // 'conversion' : truncation of constant value
+#pragma warning(disable: 4334) // 'operator' : result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
+#pragma warning(disable: 4355) // 'this' : used in base member initializer list
 #endif
