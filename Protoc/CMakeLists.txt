@@ -27,6 +27,11 @@ target_include_directories(${LIBRARY_NAME}
         PUBLIC ${ADDITIONAL_INCLUDE_DIRS}
         )
 
+find_package(Threads)
+if (CMAKE_USE_PTHREADS_INIT)
+    add_definitions(-DHAVE_PTHREAD)
+endif (CMAKE_USE_PTHREADS_INIT)
+
 # Define here name of the binaries
 set(EXECUTABLE_NAME protoc)
 set(EXECUTABLE_NAME_PROTOC ${EXECUTABLE_NAME} CACHE STRING "protoc.exe")
@@ -36,4 +41,5 @@ add_executable(${EXECUTABLE_NAME} ${protoc_SRC})
 target_link_libraries(${EXECUTABLE_NAME}
         PRIVATE ${LIBRARY_NAME}
         ${LIBRARY_PROTOBUF_3_14_0}
+        ${CMAKE_THREAD_LIBS_INIT}
         )
