@@ -1,5 +1,5 @@
-set(LIBRARY_NAME libprotobuf)
-set(LIBRARY_PROTOBUF_3_14_0 ${LIBRARY_NAME} CACHE STRING "libprotobuf.lib")
+set(LIBRARY_NAME protobuf314)
+set(LIBRARY_PROTOBUF_3_14_0 ${LIBRARY_NAME} CACHE STRING "protobuf314.lib")
 
 # Find all the input files
 FILE(GLOB_RECURSE LIBRARY_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/Source/Protobuf/Private/*.cc")

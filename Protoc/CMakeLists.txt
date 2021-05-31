@@ -1,4 +1,4 @@
-set(LIBRARY_NAME libprotoc)
+set(LIBRARY_NAME protoc314)
 
 # Find all the input files
 FILE(GLOB_RECURSE LIBRARY_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
