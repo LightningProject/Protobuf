@@ -415,6 +415,8 @@
 #ifdef PROTOBUF_API
 #undef PROTOBUF_EXPORT
 #define PROTOBUF_EXPORT PROTOBUF_API
+#undef PROTOBUF_EXPORT_TEMPLATE_DEFINE
+#define PROTOBUF_EXPORT_TEMPLATE_DEFINE PROTOBUF_API
 #endif
 
 // Windows declares several inconvenient macro names.  We #undef them and then
